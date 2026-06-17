@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root-html">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ghaida Meshal Al-Lahyani — Digital Solutions Specialist</title>
+<meta name="description" content="Ghaida Meshal Al-Lahyani — Computer Science Graduate, First-Class Honors, Master's Student. Digital Solutions Specialist contributing to Enterprise Transformation at the Public Prosecution."/>
+<meta property="og:title" content="Ghaida Meshal Al-Lahyani — Digital Solutions Specialist"/>
+<meta property="og:description" content="Transforming ideas into impactful digital solutions through technology, research, and professional execution."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════ */
+:root {
+  --bg:          #F9F7F2;
+  --bg-2:        #F0EDE5;
+  --bg-3:        #E8E4DA;
+  --ink:         #0D0D0D;
+  --ink-2:       #2C2C2C;
+  --ink-3:       #5A5A5A;
+  --ink-4:       #8A8A8A;
+  --gold:        #8B6914;
+  --gold-lt:     #B8922A;
+  --gold-pale:   #E8D5A0;
+  --gold-wash:   #F5EDD4;
+  --navy:        #1C2B4A;
+  --navy-lt:     #2D4270;
+  --rule:        #D8D3C8;
+  --white:       #FDFCF9;
+  --shadow:      rgba(13,13,13,0.07);
+  --shadow-lg:   rgba(13,13,13,0.12);
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'IBM Plex Sans', system-ui, sans-serif;
+  --font-arabic: 'Noto Naskh Arabic', 'Arabic Typesetting', serif;
+  --ease:        cubic-bezier(0.16,1,0.3,1);
+}
+[data-theme="dark"] {
+  --bg:          #08080F;
+  --bg-2:        #0F0F1A;
+  --bg-3:        #161624;
+  --ink:         #F0EDE6;
+  --ink-2:       #C8C4BC;
+  --ink-3:       #8A8580;
+  --ink-4:       #5A5550;
+  --gold:        #C9A84C;
+  --gold-lt:     #D4B86A;
+  --gold-pale:   #3A2E10;
+  --gold-wash:   #1E1A0A;
+  --navy:        #1E3A6E;
+  --navy-lt:     #2D5299;
+  --rule:        #252530;
+  --white:       #0F0F1A;
+  --shadow:      rgba(0,0,0,0.3);
+  --shadow-lg:   rgba(0,0,0,0.5);
+}
+
+/* ═══════════════════════════════════════
+   RESET
+═══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-weight:400;
+  line-height:1.65;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition:background 0.35s var(--ease),color 0.35s var(--ease);
+}
+/* Arabic body override */
+body.ar{font-family:var(--font-arabic)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg-2)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ═══════════════════════════════════════
+   LANGUAGE VISIBILITY
+═══════════════════════════════════════ */
+.en-text,.ar-text{display:none}
+body.en .en-text{display:revert}
+body.ar .ar-text{display:revert}
+
+/* ═══════════════════════════════════════
+   GLOBAL ARABIC RTL
+   Every Arabic element respects RTL fully
+═══════════════════════════════════════ */
+body.ar *{text-align:right}
+body.ar .sec-label{flex-direction:row-reverse;justify-content:flex-start}
+body.ar .hero-eyebrow{flex-direction:row-reverse}
+body.ar .hero-creds{align-items:flex-end}
+body.ar .hero-cred-item{flex-direction:row-reverse;justify-content:flex-end}
+body.ar .about-grid{direction:rtl}
+body.ar .about-pull{border-left:none;border-right:3px solid var(--gold)}
+body.en .about-badge{bottom:-1.5rem;right:-1.5rem}
+body.ar .about-badge{bottom:-1.5rem;left:-1.5rem;right:auto}
+body.ar .about-copy p{direction:rtl;text-align:right}
+body.ar .exp-card{direction:rtl;text-align:right}
+body.ar .exp-card::after{transform-origin:right;background:linear-gradient(270deg,var(--gold),transparent)}
+body.en .exp-num{right:1.5rem}
+body.ar .exp-num{left:1.5rem;right:auto}
+body.ar .academic-grid{direction:rtl}
+body.ar .research-item{flex-direction:row-reverse;justify-content:flex-end}
+body.ar .ms-card{direction:rtl;text-align:right}
+body.ar .ms-card::before{content:'م';font-family:var(--font-arabic);right:auto;left:-1rem}
+body.ar .progress-label{direction:rtl}
+body.ar .why-card{direction:rtl;text-align:right}
+body.ar .why-ic{margin-right:0}
+body.ar .contact-center{direction:rtl}
+body.ar .contact-center .sec-label{justify-content:center;flex-direction:row-reverse}
+body.ar .contact-btns{direction:ltr}
+body.ar .hero-wrap{direction:rtl}
+body.ar .hero-gold-line{right:0;left:auto}
+/* Arabic font weight overrides for clarity */
+body.ar .sec-heading{font-family:var(--font-arabic);font-weight:700;font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:0;line-height:1.4}
+body.ar .sec-heading em{font-style:normal}
+body.ar .pull-quote{font-family:var(--font-arabic);font-style:normal;font-size:1.25rem;font-weight:600;line-height:1.9}
+body.ar .hero-name{font-family:var(--font-arabic);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;letter-spacing:0;line-height:1.3}
+body.ar .hero-name .line2{font-style:normal;font-weight:600}
+body.ar .hero-tagline{font-family:var(--font-arabic);font-size:clamp(1rem,1.6vw,1.2rem);line-height:2}
+body.ar .hero-title-role{font-family:var(--font-arabic);font-size:1rem;letter-spacing:0;text-transform:none}
+body.ar .hero-cred-item{font-family:var(--font-arabic);font-size:0.9rem;letter-spacing:0;text-transform:none}
+body.ar .hero-eyebrow-txt{font-family:var(--font-arabic);font-size:0.85rem;letter-spacing:0;text-transform:none}
+body.ar .exp-card h3{font-family:var(--font-arabic);font-size:1rem;font-weight:700}
+body.ar .exp-card p{font-family:var(--font-arabic);font-size:0.88rem;line-height:1.9}
+body.ar .why-card h3{font-family:var(--font-arabic);font-size:1rem;font-weight:700}
+body.ar .why-card p{font-family:var(--font-arabic);font-size:0.86rem;line-height:1.9}
+body.ar .degree-title{font-family:var(--font-arabic);font-size:1.5rem;font-weight:700;line-height:1.5}
+body.ar .degree-uni{font-family:var(--font-arabic);font-size:0.9rem;letter-spacing:0;text-transform:none}
+body.ar .degree-badge{font-family:var(--font-arabic);font-size:0.85rem;letter-spacing:0;text-transform:none}
+body.ar .research-txt{font-family:var(--font-arabic);font-size:0.92rem;line-height:1.8}
+body.ar .ms-title{font-family:var(--font-arabic);font-size:1.5rem;line-height:1.5}
+body.ar .ms-subtitle{font-family:var(--font-arabic);font-size:0.9rem;line-height:1.9}
+body.ar .ms-label{font-family:var(--font-arabic);font-size:0.82rem;letter-spacing:0;text-transform:none}
+body.ar .card-stat-label{font-family:var(--font-arabic);font-size:0.82rem;letter-spacing:0;text-transform:none}
+body.ar .foot-tag{font-family:var(--font-arabic);font-style:normal;font-size:1.25rem}
+body.ar .foot-copy{font-family:var(--font-arabic);font-size:0.8rem;letter-spacing:0;text-transform:none}
+body.ar .badge-sub{font-family:var(--font-arabic);font-size:0.72rem;letter-spacing:0;text-transform:none}
+body.ar .pull-attr{font-family:var(--font-arabic);font-size:0.82rem;letter-spacing:0;text-transform:none}
+body.ar .contact-sub{font-family:var(--font-arabic);font-size:1rem;line-height:2}
+body.ar .c-btn{font-family:var(--font-arabic);font-size:0.88rem;letter-spacing:0;text-transform:none}
+body.ar .btn-gold{font-family:var(--font-arabic);font-size:0.9rem;letter-spacing:0;text-transform:none}
+body.ar .btn-ghost{font-family:var(--font-arabic);font-size:0.9rem;letter-spacing:0;text-transform:none}
+body.ar .skill-chip{font-family:var(--font-arabic);font-size:0.88rem;letter-spacing:0}
+body.ar .nav-links a{letter-spacing:0;text-transform:none;font-family:var(--font-arabic)}
+body.ar .nav-links a::after{transform-origin:right}
+body.ar .mob-menu a{font-family:var(--font-arabic);font-size:1.8rem}
+body.ar .scroll-hint{font-family:var(--font-arabic);font-size:0.78rem;letter-spacing:0;text-transform:none}
+body.ar .sec-label-text{font-family:var(--font-arabic);font-size:0.85rem;letter-spacing:0;text-transform:none}
+
+/* ═══════════════════════════════════════
+   PROGRESS BAR
+═══════════════════════════════════════ */
+#progress{
+  position:fixed;top:0;left:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-lt));
+  width:0%;z-index:1100;transition:width .08s linear;
+}
+
+/* ═══════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:1.1rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background 0.4s var(--ease),box-shadow 0.4s var(--ease);
+}
+nav.scrolled{
+  background:rgba(249,247,242,0.93);
+  backdrop-filter:blur(16px);
+  box-shadow:0 1px 0 var(--rule);
+}
+[data-theme="dark"] nav.scrolled{background:rgba(8,8,15,0.93)}
+.nav-brand{
+  font-family:var(--font-display);font-size:1.25rem;font-weight:700;
+  color:var(--ink);letter-spacing:0.01em;
+}
+.nav-brand span{color:var(--gold)}
+.nav-brand .ar-text{font-family:var(--font-arabic);font-size:1.05rem}
+.nav-controls{display:flex;align-items:center;gap:1rem}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{
+  font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--ink-3);transition:color 0.2s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s var(--ease);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links .cta-link{
+  padding:0.45rem 1.2rem;border:1px solid var(--gold);
+  color:var(--gold)!important;font-size:0.68rem!important;
+  transition:background 0.2s,color 0.2s!important;
+}
+.nav-links .cta-link::after{display:none!important}
+.nav-links .cta-link:hover{background:var(--gold);color:var(--white)!important}
+.lang-sw{display:flex;border:1px solid var(--rule);overflow:hidden}
+.lang-sw button{
+  padding:0.35rem 0.7rem;font-size:0.68rem;font-weight:600;
+  letter-spacing:0.08em;cursor:pointer;border:none;background:transparent;
+  color:var(--ink-4);transition:all 0.2s;
+}
+.lang-sw button.on{background:var(--gold);color:#fff}
+.lang-sw button:not(.on):hover{color:var(--ink)}
+.theme-btn{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);
+  background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--ink-3);transition:all 0.2s;
+}
+.theme-btn:hover{border-color:var(--gold);color:var(--gold)}
+.theme-btn svg{width:16px;height:16px}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all 0.3s}
+.mob-menu{
+  display:none;position:fixed;inset:0;z-index:900;background:var(--bg);
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--font-display);font-size:2rem;font-weight:400;color:var(--ink)}
+.mob-controls{display:flex;gap:1rem;align-items:center;margin-top:1rem}
+
+/* ═══════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════ */
+section{padding:7rem 0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 2.5rem}
+.sec-label{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.sec-label-line{width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.sec-label-text{
+  font-size:0.66rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;
+}
+.sec-heading{
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,4.5vw,3.8rem);
+  font-weight:500;line-height:1.1;color:var(--ink);letter-spacing:-0.01em;
+}
+.sec-heading em{font-style:italic;color:var(--gold)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv1{transition-delay:0.08s}.rv2{transition-delay:0.16s}
+.rv3{transition-delay:0.24s}.rv4{transition-delay:0.32s}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+#hero{
+  min-height:100vh;background:var(--bg-2);
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;padding:0;
+}
+.hero-noise{
+  position:absolute;inset:0;opacity:0.025;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:256px;
+}
+.hero-wm{
+  position:absolute;font-family:var(--font-arabic);
+  font-size:clamp(18rem,45vw,36rem);font-weight:700;
+  color:transparent;-webkit-text-stroke:1px var(--gold);
+  opacity:0.045;line-height:1;pointer-events:none;user-select:none;
+  top:50%;transform:translateY(-52%);
+}
+body.en .hero-wm{right:-4rem}
+body.ar .hero-wm{left:-4rem}
+.hero-accent{
+  position:absolute;width:3px;top:15%;bottom:15%;
+  background:linear-gradient(180deg,transparent,var(--gold) 30%,var(--gold-lt) 70%,transparent);
+}
+body.en .hero-accent{left:0}
+body.ar .hero-accent{right:0;left:auto}
+.hero-wrap{
+  max-width:1160px;margin:0 auto;padding:0 2.5rem;padding-top:8rem;width:100%;
+  display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center;
+}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem;
+  animation:fadeUp 0.8s 0.2s var(--ease) both;
+}
+.hero-eyebrow-bar{width:36px;height:1px;background:var(--gold);flex-shrink:0}
+.hero-eyebrow-txt{
+  font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;
+}
+.hero-name{
+  font-family:var(--font-display);font-size:clamp(3rem,6.5vw,5.5rem);
+  font-weight:700;line-height:1.06;color:var(--ink);letter-spacing:-0.02em;
+  animation:fadeUp 0.8s 0.35s var(--ease) both;
+}
+.hero-name .line2{color:var(--gold-lt);font-weight:400;font-style:italic}
+/* Professional title role under name */
+.hero-role{
+  margin-top:0.75rem;
+  display:inline-flex;align-items:center;gap:0.6rem;
+  animation:fadeUp 0.8s 0.48s var(--ease) both;
+}
+.hero-role-text{
+  font-size:0.8rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);
+}
+.hero-role-bar{width:1px;height:14px;background:var(--gold);opacity:0.4}
+.hero-role-sub{font-size:0.75rem;font-weight:400;letter-spacing:0.1em;color:var(--ink-3)}
+.hero-creds{
+  margin-top:1.5rem;display:flex;flex-direction:column;gap:0.45rem;
+  animation:fadeUp 0.8s 0.56s var(--ease) both;
+}
+.hero-cred-item{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.79rem;letter-spacing:0.05em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;
+}
+.hero-cred-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.hero-tagline{
+  margin-top:2rem;font-size:clamp(1rem,1.7vw,1.25rem);
+  color:var(--ink-3);line-height:1.75;max-width:500px;
+  animation:fadeUp 0.8s 0.68s var(--ease) both;
+}
+.hero-actions{
+  margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;
+  animation:fadeUp 0.8s 0.8s var(--ease) both;
+}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  padding:0.85rem 1.9rem;background:var(--gold);color:#fff;
+  font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  border:none;cursor:pointer;transition:background 0.25s,transform 0.2s;
+}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  padding:0.85rem 1.9rem;border:1px solid var(--rule);color:var(--ink-2);
+  font-size:0.74rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  cursor:pointer;transition:border-color 0.25s,background 0.25s,transform 0.2s;
+}
+.btn-ghost:hover{border-color:var(--gold);background:var(--gold-wash);transform:translateY(-1px)}
+/* Hero stat card */
+.hero-card{
+  background:var(--bg);border:1px solid var(--rule);padding:2.5rem 2rem;
+  position:relative;animation:fadeIn 1s 0.7s var(--ease) both;
+}
+.hero-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+}
+body.ar .hero-card::before{background:linear-gradient(270deg,var(--gold),transparent)}
+.card-monogram{
+  font-family:var(--font-arabic);font-size:3.5rem;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:1.5rem;opacity:0.9;
+}
+.card-stat{margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule)}
+.card-stat:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.card-stat-num{
+  font-family:var(--font-display);font-size:1.8rem;font-weight:700;
+  color:var(--gold);line-height:1;
+}
+.card-stat-label{
+  font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-4);margin-top:0.25rem;
+}
+.scroll-hint{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  color:var(--ink-4);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
+  animation:fadeIn 1s 1.6s both;
+}
+.scroll-needle{
+  width:1px;height:38px;
+  background:linear-gradient(180deg,var(--gold),transparent);
+  animation:needle 1.8s ease-in-out infinite;
+}
+@keyframes needle{0%,100%{opacity:0.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.08)}}
+
+/* ═══════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════ */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-pull{
+  background:var(--bg-2);padding:3rem;
+  border-left:3px solid var(--gold);position:relative;
+}
+.pull-quote{
+  font-family:var(--font-display);font-size:1.45rem;font-weight:400;
+  font-style:italic;color:var(--ink);line-height:1.6;
+}
+.pull-attr{
+  margin-top:1.5rem;font-size:0.7rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--ink-4);
+}
+.about-badge{
+  position:absolute;background:var(--gold);padding:1rem 1.5rem;
+}
+.badge-main{
+  font-family:var(--font-display);font-size:1.6rem;font-weight:700;
+  color:#fff;display:block;line-height:1;
+}
+.badge-sub{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+.about-copy p{font-size:1rem;line-height:1.9;color:var(--ink-2);margin-bottom:1.25rem}
+.about-copy p:last-child{margin-bottom:0}
+
+/* ═══════════════════════════════════════
+   EXPERIENCE
+═══════════════════════════════════════ */
+#experience{background:var(--bg-2)}
+/* Intro description block */
+.exp-intro{
+  margin-top:1.5rem;margin-bottom:3rem;
+  padding:2rem 2.25rem;
+  background:var(--bg);border-left:3px solid var(--gold);
+}
+body.ar .exp-intro{border-left:none;border-right:3px solid var(--gold);direction:rtl;text-align:right}
+.exp-intro p{font-size:0.92rem;color:var(--ink-2);line-height:1.85;margin-bottom:0.5rem}
+body.ar .exp-intro p{font-family:var(--font-arabic);font-size:0.92rem;line-height:2}
+.exp-intro p strong{font-weight:600;color:var(--ink)}
+.exp-bullets{margin-top:1rem;list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+body.ar .exp-bullets{direction:rtl}
+.exp-bullet{
+  display:flex;align-items:flex-start;gap:0.65rem;
+  font-size:0.88rem;color:var(--ink-2);line-height:1.7;
+}
+body.ar .exp-bullet{flex-direction:row-reverse;font-family:var(--font-arabic);font-size:0.9rem}
+.exp-bullet-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.55rem}
+/* Cards */
+.exp-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5px;border:1.5px solid var(--rule);
+}
+.exp-card{
+  background:var(--bg);padding:2.25rem 2rem;
+  position:relative;overflow:hidden;
+  transition:background 0.3s,transform 0.3s var(--ease);
+}
+.exp-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform 0.4s var(--ease);
+}
+.exp-card:hover{background:var(--gold-wash)}
+.exp-card:hover::after{transform:scaleX(1)}
+.exp-icon{
+  width:42px;height:42px;border:1px solid var(--gold-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.25rem;color:var(--gold);
+  transition:background 0.3s,border-color 0.3s;flex-shrink:0;
+}
+.exp-card:hover .exp-icon{background:var(--gold);border-color:var(--gold);color:#fff}
+.exp-card h3{
+  font-family:var(--font-display);font-size:1.1rem;font-weight:500;
+  color:var(--ink);margin-bottom:0.5rem;
+}
+.exp-card p{font-size:0.83rem;color:var(--ink-4);line-height:1.65}
+.exp-num{
+  position:absolute;font-family:var(--font-display);
+  font-size:3.5rem;font-weight:700;color:var(--bg-3);line-height:1;
+  top:1.5rem;transition:color 0.3s;
+}
+.exp-card:hover .exp-num{color:var(--gold-pale)}
+
+/* ═══════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════ */
+#skills{background:var(--navy)}
+#skills .sec-heading{color:#fff}
+#skills .sec-label-text{color:var(--gold)}
+.skills-flow{display:flex;flex-wrap:wrap;gap:1rem;margin-top:3.5rem}
+body.ar .skills-flow{direction:rtl}
+.skill-chip{
+  padding:0.65rem 1.4rem;border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.7);font-size:0.78rem;font-weight:500;letter-spacing:0.06em;
+  transition:all 0.25s;cursor:default;
+}
+.skill-chip:hover{border-color:var(--gold);color:var(--gold);background:rgba(184,146,42,0.08)}
+.skill-chip.featured{background:var(--gold);border-color:var(--gold);color:#fff}
+.skill-chip.featured:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+
+/* ═══════════════════════════════════════
+   ACADEMIC
+═══════════════════════════════════════ */
+#academic{background:var(--bg)}
+.academic-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3.5rem}
+.degree-card{background:var(--bg-2);padding:3rem;border-top:3px solid var(--gold);position:relative}
+.degree-icon{
+  width:52px;height:52px;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:2rem;color:#fff;
+}
+.degree-title{
+  font-family:var(--font-display);font-size:1.7rem;font-weight:700;
+  color:var(--ink);line-height:1.15;margin-bottom:0.5rem;
+}
+.degree-uni{
+  font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:1.5rem;
+}
+.degree-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.5rem 1rem;background:var(--gold);color:#fff;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+}
+.research-list{margin-top:2.25rem}
+.research-list-label{
+  font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--ink-4);margin-bottom:1rem;display:block;
+}
+body.ar .research-list-label{font-family:var(--font-arabic);letter-spacing:0;font-size:0.8rem;text-transform:none}
+.research-item{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.85rem 0;border-bottom:1px solid var(--rule);
+}
+.research-item:last-child{border-bottom:none}
+.research-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.research-txt{font-size:0.9rem;color:var(--ink-2)}
+/* MS Card */
+.ms-card{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-lt) 100%);
+  padding:3rem;color:#fff;position:relative;overflow:hidden;
+}
+.ms-card::before{
+  content:'M';position:absolute;bottom:-1rem;right:-1rem;
+  font-family:var(--font-display);font-size:9rem;font-weight:700;
+  color:rgba(255,255,255,0.05);line-height:1;pointer-events:none;
+}
+.ms-label{
+  font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);margin-bottom:1.25rem;display:block;
+}
+.ms-title{
+  font-family:var(--font-display);font-size:1.65rem;font-weight:700;
+  color:#fff;line-height:1.2;margin-bottom:1rem;
+}
+.ms-subtitle{font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.75}
+.ms-graduation{
+  margin-top:2rem;padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,0.12);
+  display:flex;align-items:center;gap:0.75rem;
+}
+body.ar .ms-graduation{flex-direction:row-reverse}
+.ms-graduation-icon{color:var(--gold);flex-shrink:0}
+.ms-graduation-txt{font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.5}
+body.ar .ms-graduation-txt{font-family:var(--font-arabic);font-size:0.85rem}
+.ms-quote{
+  margin-top:1.5px;background:var(--gold);padding:2rem;
+}
+.ms-quote p{font-size:1rem;font-weight:500;color:#fff;line-height:1.65}
+body.ar .ms-quote p{font-family:var(--font-arabic);font-size:1rem;font-weight:600;line-height:1.9}
+
+/* ═══════════════════════════════════════
+   WHY WORK WITH ME
+═══════════════════════════════════════ */
+#why{background:var(--bg-2)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.why-card{
+  padding:2rem;background:var(--bg);border:1px solid var(--rule);
+  transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s var(--ease);
+}
+.why-card:hover{border-color:var(--gold);box-shadow:0 8px 24px var(--shadow);transform:translateY(-3px)}
+.why-ic{width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:1.25rem}
+.why-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem}
+.why-card p{font-size:0.82rem;color:var(--ink-4);line-height:1.7}
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+#contact{background:var(--bg)}
+.contact-center{max-width:660px;margin:0 auto;text-align:center}
+.contact-sub{margin-top:1.5rem;font-size:1.05rem;color:var(--ink-3);line-height:1.85}
+.contact-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:3rem}
+.c-btn{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  padding:0.8rem 1.6rem;border:1px solid var(--rule);
+  font-size:0.73rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-3);transition:all 0.25s;
+}
+.c-btn svg{width:15px;height:15px;flex-shrink:0}
+.c-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-wash)}
+.c-btn.primary{background:var(--gold);border-color:var(--gold);color:#fff}
+.c-btn.primary:hover{background:var(--gold-lt);border-color:var(--gold-lt);color:#fff}
+.contact-direct{margin-top:2.5rem;font-size:0.85rem;color:var(--ink-4);line-height:2}
+.contact-direct a{color:var(--gold);border-bottom:1px solid var(--gold-pale);transition:color 0.2s}
+.contact-direct a:hover{color:var(--gold-lt)}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
+[data-theme="dark"] footer{background:var(--bg-3)}
+.foot-tag{
+  font-family:var(--font-display);font-size:1.4rem;
+  font-weight:400;font-style:italic;color:rgba(249,247,242,0.4);
+}
+.foot-tag span{color:var(--gold)}
+.foot-copy{
+  margin-top:1.25rem;font-size:0.68rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(249,247,242,0.22);
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:960px){
+  .hero-wrap{grid-template-columns:1fr;padding-top:7rem}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-badge{position:static;margin-top:2rem}
+  .academic-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  nav{padding:1.1rem 1.5rem}
+  .nav-links{display:none}
+  .hbg{display:flex}
+}
+@media(max-width:640px){
+  section{padding:5rem 0}
+  .wrap{padding:0 1.5rem}
+  .why-grid{grid-template-columns:1fr}
+  .hero-name{font-size:clamp(2.5rem,8vw,3.5rem)}
+  .exp-grid{gap:1px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body class="en">
+
+<div id="progress"></div>
+
+<!-- ══════════════════════════════════
+     NAV
+══════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-brand">
+    <span class="en-text">G<span>.</span>M. Al-Lahyani</span>
+    <span class="ar-text">غ<span>.</span> م. اللحياني</span>
+  </div>
+  <div class="nav-controls">
+    <ul class="nav-links">
+      <li><a href="#about"><span class="en-text">About</span><span class="ar-text">عني</span></a></li>
+      <li><a href="#experience"><span class="en-text">Experience</span><span class="ar-text">الخبرة</span></a></li>
+      <li><a href="#skills"><span class="en-text">Skills</span><span class="ar-text">المهارات</span></a></li>
+      <li><a href="#academic"><span class="en-text">Academic</span><span class="ar-text">الأكاديمي</span></a></li>
+      <li><a href="#contact" class="cta-link"><span class="en-text">Contact</span><span class="ar-text">تواصلي</span></a></li>
+    </ul>
+    <div class="lang-sw">
+      <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+      <button id="btn-ar" onclick="setLang('ar')">ع</button>
+    </div>
+    <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <a href="#about" onclick="closeMob()"><span class="en-text">About</span><span class="ar-text">عني</span></a>
+  <a href="#experience" onclick="closeMob()"><span class="en-text">Experience</span><span class="ar-text">الخبرة</span></a>
+  <a href="#skills" onclick="closeMob()"><span class="en-text">Skills</span><span class="ar-text">المهارات</span></a>
+  <a href="#academic" onclick="closeMob()"><span class="en-text">Academic</span><span class="ar-text">الأكاديمي</span></a>
+  <a href="#contact" onclick="closeMob()"><span class="en-text">Contact</span><span class="ar-text">تواصلي</span></a>
+  <div class="mob-controls">
+    <div class="lang-sw">
+      <button id="mb-en" class="on" onclick="setLang('en');closeMob()">EN</button>
+      <button id="mb-ar" onclick="setLang('ar');closeMob()">ع</button>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-wm">غ</div>
+  <div class="hero-accent"></div>
+
+  <div class="hero-wrap">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-bar"></div>
+        <span class="hero-eyebrow-txt">
+          <span class="en-text">Portfolio · Jeddah, Saudi Arabia</span>
+          <span class="ar-text">ملف أعمال · جدة، المملكة العربية السعودية</span>
+        </span>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="en-text">Ghaida Meshal<br><span class="line2">Al-Lahyani</span></span>
+        <span class="ar-text">غيداء مشعل<br><span class="line2">اللحياني</span></span>
+      </h1>
+
+      <!-- Professional Role Identity -->
+      <div class="hero-role">
+        <span class="hero-role-text en-text">Digital Solutions Specialist</span>
+        <span class="hero-role-text ar-text">أخصائية حلول رقمية</span>
+        <div class="hero-role-bar"></div>
+        <span class="hero-role-sub en-text">Enterprise Transformation Program</span>
+        <span class="hero-role-sub ar-text">برنامج التحول المؤسسي</span>
+      </div>
+
+      <div class="hero-creds">
+        <div class="hero-cred-item">
+          <div class="hero-cred-dot"></div>
+          <span class="en-text">B.Sc. Computer Science — First-Class Honors, Umm Al-Qura University</span>
+          <span class="ar-text">بكالوريوس علوم الحاسب — مرتبة الشرف الأولى، جامعة أم القرى</span>
+        </div>
+        <div class="hero-cred-item">
+          <div class="hero-cred-dot"></div>
+          <span class="en-text">Master's Student — Expected Graduation 2026</span>
+          <span class="ar-text">طالبة ماجستير — متوقع التخرج عام 2026</span>
+        </div>
+      </div>
+
+      <p class="hero-tagline">
+        <span class="en-text">Transforming ideas into impactful digital solutions through technology, research, and professional execution.</span>
+        <span class="ar-text">أحوّل الأفكار إلى حلول رقمية مؤثرة من خلال التقنية والبحث والتنفيذ الاحترافي.</span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-gold">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <span class="en-text">Contact Me</span><span class="ar-text">تواصلي معي</span>
+        </a>
+        <a href="#experience" class="btn-ghost">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span class="en-text">View Experience</span><span class="ar-text">الأعمال والخبرات</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Stat Card -->
+    <div class="hero-card">
+      <div class="card-monogram">غ</div>
+      <div class="card-stat">
+        <div class="card-stat-num">B.Sc.</div>
+        <div class="card-stat-label"><span class="en-text">Computer Science — First-Class Honors</span><span class="ar-text">علوم الحاسب — مرتبة الشرف الأولى</span></div>
+      </div>
+      <div class="card-stat">
+        <div class="card-stat-num">M.Sc.</div>
+        <div class="card-stat-label"><span class="en-text">Master's Student — Expected 2026</span><span class="ar-text">طالبة ماجستير — متوقع 2026</span></div>
+      </div>
+      <div class="card-stat">
+        <div class="card-stat-num" style="font-size:1.2rem;line-height:1.2">Digital<br>Solutions</div>
+        <div class="card-stat-label"><span class="en-text">Specialist — Enterprise Transformation</span><span class="ar-text">أخصائية — التحول المؤسسي</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span class="en-text">Scroll</span><span class="ar-text">مرّري</span>
+    <div class="scroll-needle"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ABOUT
+══════════════════════════════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual rv">
+        <div class="about-pull">
+          <p class="pull-quote">
+            <span class="en-text">"Where academic rigor meets professional execution, meaningful outcomes are built."</span>
+            <span class="ar-text">"حيث يلتقي التفوق الأكاديمي بالتنفيذ الاحترافي، تُبنى المخرجات ذات القيمة الحقيقية."</span>
+          </p>
+          <p class="pull-attr">
+            <span class="en-text">— Guiding Principle</span>
+            <span class="ar-text">— المبدأ التوجيهي</span>
+          </p>
+          <div class="about-badge">
+            <span class="badge-main">2026</span>
+            <span class="badge-sub"><span class="en-text">Expected Graduation</span><span class="ar-text">التخرج المتوقع</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <div class="sec-label rv">
+          <div class="sec-label-line"></div>
+          <span class="sec-label-text en-text">About</span>
+          <span class="sec-label-text ar-text">نبذة عني</span>
+        </div>
+        <h2 class="sec-heading rv rv1">
+          <span class="en-text">Academic Excellence<br>Meets <em>Real Impact</em></span>
+          <span class="ar-text">التفوق الأكاديمي<br>يلتقي بـ<em>الأثر الحقيقي</em></span>
+        </h2>
+        <div class="rv rv2" style="margin-top:2rem">
+          <p class="en-text">I hold a Bachelor of Computer Science from Umm Al-Qura University, graduating with First-Class Honors — a distinction that reflects both academic rigor and a commitment to depth and precision in every undertaking.</p>
+          <p class="ar-text">حاصلة على بكالوريوس علوم الحاسب من جامعة أم القرى بمرتبة الشرف الأولى — تمييز يعكس الصرامة الأكاديمية والالتزام بالدقة والعمق في كل ما أقوم به.</p>
+
+          <p class="en-text">I am currently a Master's student with an expected graduation in 2026, while contributing to the Enterprise Transformation Program at the Public Prosecution — producing high-quality digital and institutional deliverables across multiple domains.</p>
+          <p class="ar-text">أواصل دراستي في مرحلة الماجستير مع توقع التخرج عام 2026، وأساهم في الوقت ذاته في برنامج التحول المؤسسي بالنيابة العامة، من خلال إنتاج مخرجات رقمية ومؤسسية عالية الجودة في مجالات متعددة.</p>
+
+          <p class="en-text">I combine analytical thinking, meticulous attention to detail, and professional execution — enabling me to translate complex requirements into precise, polished results.</p>
+          <p class="ar-text">أجمع بين التفكير التحليلي والاهتمام الدقيق بالتفاصيل والتنفيذ الاحترافي — مما يمكّنني من ترجمة المتطلبات المعقدة إلى نتائج دقيقة ومصقولة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     EXPERIENCE
+══════════════════════════════════ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-label rv">
+      <div class="sec-label-line"></div>
+      <span class="sec-label-text en-text">Experience</span>
+      <span class="sec-label-text ar-text">الخبرة</span>
+    </div>
+    <h2 class="sec-heading rv rv1">
+      <span class="en-text">Enterprise Transformation<br><em>Program Contributions</em></span>
+      <span class="ar-text">مساهمات في<br><em>برنامج التحول المؤسسي</em></span>
+    </h2>
+
+    <!-- Narrative intro with bullet list -->
+    <div class="exp-intro rv rv2">
+      <p class="en-text"><strong>Public Prosecution — Enterprise Transformation Program</strong><br>Contributing to the preparation and execution of program deliverables, including:</p>
+      <p class="ar-text"><strong>النيابة العامة — برنامج التحول المؤسسي</strong><br>المساهمة في إعداد وتنفيذ مخرجات البرنامج، تشمل:</p>
+      <ul class="exp-bullets">
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Developing institutional websites.</span><span class="ar-text">تطوير المواقع الإلكترونية.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Building digital systems and platforms.</span><span class="ar-text">تطوير الأنظمة والمنصات الرقمية.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Preparing executive and technical reports.</span><span class="ar-text">إعداد التقارير التنفيذية والفنية.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Designing surveys and data-collection forms.</span><span class="ar-text">تصميم الاستبيانات ونماذج جمع البيانات.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Preparing professional presentations.</span><span class="ar-text">إعداد العروض التقديمية الاحترافية.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Designing visual identities for workshops and events.</span><span class="ar-text">تصميم الهويات البصرية للورش والفعاليات.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Creating banners, certificates, and invitations.</span><span class="ar-text">تصميم البنرات والشهادات والدعوات.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Preparing timelines and project support materials.</span><span class="ar-text">إعداد الجداول الزمنية والمواد الداعمة للمشاريع.</span></li>
+        <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Producing digital and executive deliverables required for initiatives and projects.</span><span class="ar-text">إنتاج المخرجات الرقمية والتنفيذية المطلوبة للمبادرات والمشاريع.</span></li>
+      </ul>
+    </div>
+
+    <!-- Deliverable type cards -->
+    <div class="exp-grid">
+
+      <div class="exp-card rv">
+        <div class="exp-num">01</div>
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3><span class="en-text">Web Development</span><span class="ar-text">تطوير المواقع الإلكترونية</span></h3>
+        <p><span class="en-text">Building functional, high-quality institutional websites and digital platforms to modern standards.</span><span class="ar-text">بناء مواقع إلكترونية مؤسسية عالية الجودة ومنصات رقمية وفق المعايير الحديثة.</span></p>
+      </div>
+
+      <div class="exp-card rv rv1">
+        <div class="exp-num">02</div>
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 12h10M12 7v10"/></svg></div>
+        <h3><span class="en-text">Digital Systems</span><span class="ar-text">الأنظمة الرقمية</span></h3>
+        <p><span class="en-text">Developing digital systems such as QR-based attendance, electronic surveys, and data-collection platforms.</span><span class="ar-text">تطوير أنظمة رقمية كأنظمة الحضور عبر QR والاستبيانات الإلكترونية ومنصات جمع البيانات.</span></p>
+      </div>
+
+      <div class="exp-card rv rv2">
+        <div class="exp-num">03</div>
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h3><span class="en-text">Technical &amp; Executive Reports</span><span class="ar-text">التقارير التنفيذية والفنية</span></h3>
+        <p><span class="en-text">Preparing structured professional reports tailored for institutional leadership and decision-makers.</span><span class="ar-text">إعداد تقارير منظمة واحترافية موجّهة للقيادات المؤسسية وصانعي القرار.</span></p>
+      </div>
+
+      <div class="exp-card rv">
+        <div class="exp-num">04</div>
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3><span class="en-text">Surveys &amp; Data Forms</span><span class="ar-text">الاستبيانات والنماذج</span></h3>
+        <p><span class="en-text">Designing structured, secure surveys and evaluation forms for institutional data collection.</span><span class="ar-text">تصميم استبيانات ونماذج تقييم منظمة وآمنة لجمع البيانات على المستوى المؤسسي.</span></p>
+      </div>
+
+      <div class="exp-card rv rv1">
+        <div class="exp-num">05</div>
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8,21 12,17 16,21"/></svg></div>
+        <h3><span class="en-text">Professional Presentations</span><span class="ar-text">العروض التقديمية الاحترافية</span></h3>
+        <p><span class="en-text">Preparing executive-grade presentations aligned with institutional visual identity standards.</span><span class="ar-text">إعداد عروض تقديمية تنفيذية متوافقة مع معايير الهوية البصرية المؤسسية.</span></p>
+      </div>
+
+      <div class="exp-card rv rv2">
+        <div class="exp-num">06</div>
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3><span class="en-text">Visual Identity &amp; Event Materials</span><span class="ar-text">الهوية البصرية ومواد الفعاليات</span></h3>
+        <p><span class="en-text">Designing event identities, banners, certificates, invitations, and all supporting visual materials.</span><span class="ar-text">تصميم هويات الورش والفعاليات والبنرات والشهادات والدعوات وجميع المواد البصرية الداعمة.</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SKILLS
+══════════════════════════════════ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label rv">
+      <div class="sec-label-line"></div>
+      <span class="sec-label-text en-text">Core Skills</span>
+      <span class="sec-label-text ar-text">المهارات الأساسية</span>
+    </div>
+    <h2 class="sec-heading rv rv1">
+      <span class="en-text">Skills Built for<br><em>Institutional Impact</em></span>
+      <span class="ar-text">مهارات مبنية<br><em>للأثر المؤسسي</em></span>
+    </h2>
+    <div class="skills-flow rv rv2">
+      <span class="skill-chip featured en-text">Artificial Intelligence</span>
+      <span class="skill-chip featured ar-text">الذكاء الاصطناعي</span>
+
+      <span class="skill-chip en-text">Web Development</span>
+      <span class="skill-chip ar-text">تطوير المواقع الإلكترونية</span>
+
+      <span class="skill-chip en-text">Digital Systems</span>
+      <span class="skill-chip ar-text">الأنظمة الرقمية</span>
+
+      <span class="skill-chip featured en-text">UI/UX Design</span>
+      <span class="skill-chip featured ar-text">تصميم واجهات وتجربة المستخدم</span>
+
+      <span class="skill-chip en-text">Technical Documentation</span>
+      <span class="skill-chip ar-text">التوثيق التقني</span>
+
+      <span class="skill-chip en-text">Executive Reporting</span>
+      <span class="skill-chip ar-text">التقارير التنفيذية</span>
+
+      <span class="skill-chip en-text">Presentation Design</span>
+      <span class="skill-chip ar-text">تصميم العروض التقديمية</span>
+
+      <span class="skill-chip en-text">Survey Design</span>
+      <span class="skill-chip ar-text">تصميم الاستبيانات</span>
+
+      <span class="skill-chip en-text">Visual Identity</span>
+      <span class="skill-chip ar-text">الهوية البصرية</span>
+
+      <span class="skill-chip featured en-text">Data Analysis</span>
+      <span class="skill-chip featured ar-text">تحليل البيانات</span>
+
+      <span class="skill-chip en-text">Research</span>
+      <span class="skill-chip ar-text">البحث العلمي</span>
+
+      <span class="skill-chip en-text">Project Deliverables</span>
+      <span class="skill-chip ar-text">إدارة المخرجات</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ACADEMIC
+══════════════════════════════════ -->
+<section id="academic">
+  <div class="wrap">
+    <div class="sec-label rv">
+      <div class="sec-label-line"></div>
+      <span class="sec-label-text en-text">Academic Profile</span>
+      <span class="sec-label-text ar-text">الملف الأكاديمي</span>
+    </div>
+    <h2 class="sec-heading rv rv1">
+      <span class="en-text">Academic<br><em>Foundation</em></span>
+      <span class="ar-text">الأساس<br><em>الأكاديمي</em></span>
+    </h2>
+
+    <div class="academic-grid">
+
+      <!-- Bachelor Card -->
+      <div class="degree-card rv">
+        <div class="degree-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <p class="degree-title">
+          <span class="en-text">Bachelor of Computer Science</span>
+          <span class="ar-text">بكالوريوس علوم الحاسب</span>
+        </p>
+        <p class="degree-uni">
+          <span class="en-text">Umm Al-Qura University</span>
+          <span class="ar-text">جامعة أم القرى</span>
+        </p>
+        <div class="degree-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <span class="en-text">First-Class Honors</span>
+          <span class="ar-text">مرتبة الشرف الأولى</span>
+        </div>
+
+        <div class="research-list">
+          <span class="research-list-label">
+            <span class="en-text">Research Interests</span>
+            <span class="ar-text">الاهتمامات البحثية</span>
+          </span>
+          <div class="research-item">
+            <div class="research-dot"></div>
+            <span class="research-txt"><span class="en-text">Artificial Intelligence</span><span class="ar-text">الذكاء الاصطناعي</span></span>
+          </div>
+          <div class="research-item">
+            <div class="research-dot"></div>
+            <span class="research-txt"><span class="en-text">Web Development</span><span class="ar-text">بناء وتطوير المواقع الإلكترونية</span></span>
+          </div>
+          <div class="research-item">
+            <div class="research-dot"></div>
+            <span class="research-txt"><span class="en-text">UI/UX Design</span><span class="ar-text">تصميم واجهات وتجربة المستخدم</span></span>
+          </div>
+          <div class="research-item">
+            <div class="research-dot"></div>
+            <span class="research-txt"><span class="en-text">Intelligent Systems</span><span class="ar-text">الأنظمة الذكية</span></span>
+          </div>
+          <div class="research-item">
+            <div class="research-dot"></div>
+            <span class="research-txt"><span class="en-text">Data Analysis</span><span class="ar-text">تحليل البيانات</span></span>
+          </div>
+          <div class="research-item">
+            <div class="research-dot"></div>
+            <span class="research-txt"><span class="en-text">Enterprise Transformation</span><span class="ar-text">التحول المؤسسي</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master's Card -->
+      <div class="rv rv2">
+        <div class="ms-card">
+          <span class="ms-label">
+            <span class="en-text">Current Academic Status · 2026</span>
+            <span class="ar-text">الوضع الأكاديمي الحالي · 2026</span>
+          </span>
+          <p class="ms-title">
+            <span class="en-text">Master's Degree<br>in Computer Science</span>
+            <span class="ar-text">ماجستير<br>في علوم الحاسب</span>
+          </p>
+          <p class="ms-subtitle">
+            <span class="en-text">Advancing academic research in artificial intelligence, intelligent systems, and applied computing, with a strong focus on practical contribution and real-world relevance.</span>
+            <span class="ar-text">أُواصل البحث الأكاديمي في الذكاء الاصطناعي والأنظمة الذكية والحوسبة التطبيقية، مع تركيز على المساهمة العملية والأثر الواقعي.</span>
+          </p>
+          <div class="ms-graduation">
+            <div class="ms-graduation-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>
+            </div>
+            <p class="ms-graduation-txt">
+              <span class="en-text"><strong style="color:rgba(255,255,255,0.9)">Expected Graduation: 2026</strong><br>Umm Al-Qura University</span>
+              <span class="ar-text"><strong style="color:rgba(255,255,255,0.9)">متوقع التخرج: 2026</strong><br>جامعة أم القرى</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="ms-quote rv rv3">
+          <p class="en-text">"Academic excellence combined with practical delivery is the foundation of my professional identity."</p>
+          <p class="ar-text">"التميز الأكاديمي مقرونًا بالتنفيذ الفعلي هو أساس هويتي المهنية."</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     WHY WORK WITH ME
+══════════════════════════════════ -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-label rv">
+      <div class="sec-label-line"></div>
+      <span class="sec-label-text en-text">Why Work With Me</span>
+      <span class="sec-label-text ar-text">لماذا أنا؟</span>
+    </div>
+    <h2 class="sec-heading rv rv1">
+      <span class="en-text">The Qualities That<br><em>Make the Difference</em></span>
+      <span class="ar-text">الصفات التي<br><em>تصنع الفارق</em></span>
+    </h2>
+
+    <div class="why-grid">
+      <div class="why-card rv">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        <h3><span class="en-text">Academic Excellence</span><span class="ar-text">التفوق الأكاديمي</span></h3>
+        <p><span class="en-text">First-Class Honors graduate with deep theoretical foundations — every deliverable reflects rigorous academic standards.</span><span class="ar-text">خريجة بمرتبة الشرف الأولى بأسس نظرية متينة — كل مخرج يعكس معايير أكاديمية صارمة.</span></p>
+      </div>
+      <div class="why-card rv rv1">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        <h3><span class="en-text">Analytical Thinking</span><span class="ar-text">التفكير التحليلي</span></h3>
+        <p><span class="en-text">Approaching every challenge with structured logic, evidence-based reasoning, and methodical problem-solving.</span><span class="ar-text">مواجهة كل تحدٍ بمنطق منظم واستدلال قائم على الأدلة وحل منهجي للمشكلات.</span></p>
+      </div>
+      <div class="why-card rv rv2">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3><span class="en-text">Attention to Detail</span><span class="ar-text">الدقة والاهتمام بالتفاصيل</span></h3>
+        <p><span class="en-text">Precision is not a goal I pursue — it is a standard I uphold across every project, report, and deliverable.</span><span class="ar-text">الدقة ليست هدفًا أسعى إليه، بل معيار أحافظ عليه في كل مشروع وتقرير ومخرج.</span></p>
+      </div>
+      <div class="why-card rv">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg></div>
+        <h3><span class="en-text">Fast Learning</span><span class="ar-text">سرعة التعلم</span></h3>
+        <p><span class="en-text">Adapting quickly to new tools, domains, and institutional requirements — turning unfamiliar ground into fluency efficiently.</span><span class="ar-text">أتكيف بسرعة مع الأدوات والمجالات والمتطلبات المؤسسية الجديدة، محوّلةً الجديد إلى إتقان بكفاءة.</span></p>
+      </div>
+      <div class="why-card rv rv1">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3><span class="en-text">Professional Execution</span><span class="ar-text">الاحترافية في التنفيذ</span></h3>
+        <p><span class="en-text">Delivering institutional-grade outputs — on time, to specification, and suitable for the most demanding audiences.</span><span class="ar-text">تسليم مخرجات بمستوى مؤسسي — في الوقت المحدد وبالمواصفات المطلوبة ومناسبة للجمهور الأكثر تطلبًا.</span></p>
+      </div>
+      <div class="why-card rv rv2">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h3><span class="en-text">Ideas into Outcomes</span><span class="ar-text">تحويل الأفكار إلى نتائج</span></h3>
+        <p><span class="en-text">Translating complex concepts and requirements into precise, polished, high-quality deliverables.</span><span class="ar-text">ترجمة المفاهيم والمتطلبات المعقدة إلى مخرجات دقيقة ومصقولة وعالية الجودة.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-center">
+      <div class="sec-label rv" style="justify-content:center">
+        <div class="sec-label-line"></div>
+        <span class="sec-label-text en-text">Let's Connect</span>
+        <span class="sec-label-text ar-text">لنتواصل</span>
+      </div>
+      <h2 class="sec-heading rv rv1">
+        <span class="en-text">Ready to Collaborate<br>on Something <em>Meaningful?</em></span>
+        <span class="ar-text">مستعدة للتعاون<br>على شيء <em>ذي قيمة؟</em></span>
+      </h2>
+      <p class="contact-sub rv rv2">
+        <span class="en-text">Whether you are looking for a skilled technical contributor, a meticulous researcher, or a professional who delivers institutional-grade results — I am ready.</span>
+        <span class="ar-text">سواء كنت تبحث عن مساهِمة تقنية متخصصة، أو باحثة متعمقة، أو محترفة قادرة على تسليم نتائج بمستوى مؤسسي — أنا جاهزة.</span>
+      </p>
+
+      <div class="contact-btns rv rv3">
+        <a href="mailto:ghaidamallhyani@gmail.com" class="c-btn primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <span class="en-text">Email Me</span><span class="ar-text">راسليني</span>
+        </a>
+        <a href="https://wa.me/966507171847" target="_blank" class="c-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="c-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com" target="_blank" class="c-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <div class="contact-direct rv rv4">
+        <p class="en-text">
+          <a href="mailto:ghaidamallhyani@gmail.com">ghaidamallhyani@gmail.com</a>
+          &nbsp;·&nbsp;
+          <a href="tel:+966507171847">+966 507 171 847</a>
+        </p>
+        <p class="ar-text">
+          <a href="mailto:ghaidamallhyani@gmail.com">ghaidamallhyani@gmail.com</a>
+          &nbsp;·&nbsp;
+          <a href="tel:+966507171847">0507171847</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="foot-tag">
+    <span class="en-text">"Let's build something <span>meaningful</span> together."</span>
+    <span class="ar-text">"لنبنِ معًا شيئًا <span>ذا معنى</span>."</span>
+  </p>
+  <p class="foot-copy">
+    <span class="en-text">© 2026 Ghaida Meshal Al-Lahyani · Digital Solutions Specialist · Makkah, Jeddah, Saudi Arabia</span>
+    <span class="ar-text">© 2026 غيداء مشعل اللحياني · أخصائية حلول رقمية · مكة، جدة، المملكة العربية السعودية</span>
+  </p>
+</footer>
+
+<script>
+/* ── LANGUAGE ── */
+let lang='en';
+function setLang(l){
+  lang=l;
+  const b=document.body, h=document.getElementById('root-html');
+  b.classList.remove('en','ar'); b.classList.add(l);
+  h.lang=l; h.dir=l==='ar'?'rtl':'ltr';
+  ['btn-en','mb-en'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.toggle('on',l==='en')});
+  ['btn-ar','mb-ar'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.toggle('on',l==='ar')});
+}
+setLang('en');
+
+/* ── THEME ── */
+let dark=false;
+function toggleTheme(){
+  dark=!dark;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'');
+  document.getElementById('icon-sun').style.display=dark?'block':'none';
+  document.getElementById('icon-moon').style.display=dark?'none':'block';
+}
+
+/* ── PROGRESS BAR ── */
+const progBar=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const pct=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  progBar.style.width=pct+'%';
+});
+
+/* ── NAV SCROLL ── */
+const navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>{navEl.classList.toggle('scrolled',window.scrollY>50)});
+
+/* ── MOBILE MENU ── */
+document.getElementById('hbg').addEventListener('click',()=>{document.getElementById('mob-menu').classList.toggle('open')});
+function closeMob(){document.getElementById('mob-menu').classList.remove('open')}
+
+/* ── SCROLL REVEAL ── */
+const rvEls=document.querySelectorAll('.rv');
+const rvObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+rvEls.forEach(el=>rvObs.observe(el));
+
+/* ── ACTIVE NAV ── */
+window.addEventListener('scroll',()=>{
+  const secs=document.querySelectorAll('section[id]');
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id});
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+cur?'var(--gold)':'';
+  });
+});
+</script>
+</body>
+</html>
