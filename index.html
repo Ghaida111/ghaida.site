@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ghaida Meshal Al-Lahyani — Digital Solutions Specialist</title>
-<meta name="description" content="Ghaida Meshal Al-Lahyani — Computer Science Graduate, First-Class Honors, Master's Student. Digital Solutions Specialist contributing to Enterprise Transformation at the Public Prosecution."/>
+<title>Ghaida Meshal Al-Lahyani — Computer Science Specialist</title>
+<meta name="description" content="Ghaida Meshal Al-Lahyani — Computer Science Graduate, First-Class Honors, Master's Student. Computer Science Graduate. Former Digital Solutions Specialist at the Public Prosecution Enterprise Transformation Program."/>
 <meta property="og:title" content="Ghaida Meshal Al-Lahyani — Digital Solutions Specialist"/>
 <meta property="og:description" content="Transforming ideas into impactful digital solutions through technology, research, and professional execution."/>
 <meta property="og:type" content="website"/>
@@ -484,74 +484,6 @@ body.ar .skills-flow{direction:rtl}
 /* ═══════════════════════════════════════
    ACADEMIC
 ═══════════════════════════════════════ */
-/* ═══════════════════════════════════════
-   CERTIFICATIONS
-═══════════════════════════════════════ */
-#certifications{background:var(--bg-2)}
-.cert-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:2rem;margin-top:3.5rem;
-}
-.cert-card{
-  background:var(--bg);border:1px solid var(--rule);
-  padding:2.25rem 2rem;position:relative;overflow:hidden;
-  transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s var(--ease);
-}
-.cert-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--gold),var(--gold-lt));
-}
-body.ar .cert-card::before{background:linear-gradient(270deg,var(--gold),var(--gold-lt))}
-.cert-card:hover{
-  border-color:var(--gold);
-  box-shadow:0 8px 32px var(--shadow-lg);
-  transform:translateY(-3px);
-}
-.cert-logo{
-  display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;
-}
-.cert-logo-badge{
-  width:48px;height:48px;background:var(--navy);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.cert-logo-badge svg{color:#fff}
-.cert-issuer{
-  font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
-  text-transform:uppercase;color:var(--gold);
-}
-body.ar .cert-issuer{font-family:var(--font-arabic);letter-spacing:0;font-size:0.82rem;text-transform:none}
-.cert-issuer-sub{
-  font-size:0.66rem;color:var(--ink-4);margin-top:0.15rem;letter-spacing:0.04em;
-}
-body.ar .cert-issuer-sub{font-family:var(--font-arabic);letter-spacing:0;font-size:0.75rem}
-.cert-title{
-  font-family:var(--font-display);font-size:1.2rem;font-weight:700;
-  color:var(--ink);line-height:1.25;margin-bottom:0.5rem;
-}
-body.ar .cert-title{font-family:var(--font-arabic);font-size:1.1rem;font-weight:700}
-.cert-spec{font-size:0.82rem;color:var(--ink-3);margin-bottom:1.25rem}
-body.ar .cert-spec{font-family:var(--font-arabic);font-size:0.85rem}
-.cert-meta{
-  display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.25rem;
-  padding-top:1.25rem;border-top:1px solid var(--rule);
-}
-.cert-badge{
-  display:inline-flex;align-items:center;gap:0.4rem;
-  padding:0.3rem 0.8rem;
-  background:var(--gold-wash);border:1px solid var(--gold-pale);
-  font-size:0.68rem;font-weight:600;color:var(--gold);letter-spacing:0.06em;
-}
-body.ar .cert-badge{font-family:var(--font-arabic);letter-spacing:0;font-size:0.78rem}
-.cert-badge svg{width:12px;height:12px;flex-shrink:0}
-.cert-valid{
-  display:inline-flex;align-items:center;gap:0.4rem;
-  padding:0.3rem 0.8rem;
-  background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);
-  font-size:0.68rem;font-weight:600;color:#059669;letter-spacing:0.06em;
-}
-body.ar .cert-valid{font-family:var(--font-arabic);letter-spacing:0;font-size:0.78rem}
-.cert-valid svg{width:12px;height:12px;flex-shrink:0}
-
 #academic{background:var(--bg)}
 .academic-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3.5rem}
 .degree-card{background:var(--bg-2);padding:3rem;border-top:3px solid var(--gold);position:relative}
@@ -761,7 +693,6 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
       <li><a href="#experience"><span class="en-text">Experience</span><span class="ar-text">الخبرة</span></a></li>
       <li><a href="#projects-showcase"><span class="en-text">Projects</span><span class="ar-text">المشاريع</span></a></li>
       <li><a href="#skills"><span class="en-text">Skills</span><span class="ar-text">المهارات</span></a></li>
-      <li><a href="#certifications"><span class="en-text">Credentials</span><span class="ar-text">الاعتمادات</span></a></li>
       <li><a href="#academic"><span class="en-text">Academic</span><span class="ar-text">الأكاديمي</span></a></li>
       <li><a href="#contact" class="cta-link"><span class="en-text">Contact</span><span class="ar-text">تواصلي</span></a></li>
     </ul>
@@ -783,9 +714,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
   <a href="#experience" onclick="closeMob()"><span class="en-text">Experience</span><span class="ar-text">الخبرة</span></a>
   <a href="#projects-showcase" onclick="closeMob()"><span class="en-text">Projects</span><span class="ar-text">المشاريع</span></a>
   <a href="#skills" onclick="closeMob()"><span class="en-text">Skills</span><span class="ar-text">المهارات</span></a>
-  <a href="#certifications" onclick="closeMob()"><span class="en-text">Credentials</span><span class="ar-text">الاعتمادات</span></a>
   <a href="#academic" onclick="closeMob()"><span class="en-text">Academic</span><span class="ar-text">الأكاديمي</span></a>
-  <a href="#contact" onclick="closeMob()"><span class="en-text">Contact</span><span class="ar-text">للنواصل</span></a>
+  <a href="#contact" onclick="closeMob()"><span class="en-text">Contact</span><span class="ar-text">تواصلي</span></a>
   <div class="mob-controls">
     <div class="lang-sw">
       <button id="mb-en" class="on" onclick="setLang('en');closeMob()">EN</button>
@@ -810,8 +740,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-bar"></div>
         <span class="hero-eyebrow-txt">
-          <span class="en-text">Portfolio · Makkah Region, Saudi Arabia</span>
-          <span class="ar-text">ملف أعمال · منطقة مكة المكرمة، المملكة العربية السعودية</span>
+          <span class="en-text">Portfolio · Saudi Arabia</span>
+          <span class="ar-text">ملف أعمال · المملكة العربية السعودية</span>
         </span>
       </div>
 
@@ -825,8 +755,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
         <span class="hero-role-text en-text">Digital Solutions Specialist</span>
         <span class="hero-role-text ar-text">أخصائية حلول رقمية</span>
         <div class="hero-role-bar"></div>
-        <span class="hero-role-sub en-text">Enterprise Transformation Program</span>
-        <span class="hero-role-sub ar-text">برنامج التحول المؤسسي</span>
+        <span class="hero-role-sub en-text">Computer Science Specialist · SCE</span>
+        <span class="hero-role-sub ar-text">أخصائية علوم الحاسب · الهيئة السعودية للمهندسين</span>
       </div>
 
       <div class="hero-creds">
@@ -837,8 +767,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
         </div>
         <div class="hero-cred-item">
           <div class="hero-cred-dot"></div>
-          <span class="en-text">Master's Student — Expected Graduation 2026</span>
-          <span class="ar-text">طالبة ماجستير — متوقع التخرج عام 2026</span>
+          <span class="en-text">Master's Degree — Completed, Pending Defense</span>
+          <span class="ar-text">ماجستير — أنهيت جميع المتطلبات، في انتظار المناقشة</span>
         </div>
       </div>
 
@@ -850,7 +780,7 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
       <div class="hero-actions">
         <a href="#contact" class="btn-gold">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          <span class="en-text">Contact Me</span><span class="ar-text">للتواصل</span>
+          <span class="en-text">Contact Me</span><span class="ar-text">تواصلي معي</span>
         </a>
         <a href="#experience" class="btn-ghost">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -868,7 +798,7 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
       </div>
       <div class="card-stat">
         <div class="card-stat-num">M.Sc.</div>
-        <div class="card-stat-label"><span class="en-text">Master's Student — Expected 2026</span><span class="ar-text">طالبة ماجستير — متوقع 2026</span></div>
+        <div class="card-stat-label"><span class="en-text">Master's — Completed, Pending Defense</span><span class="ar-text">ماجستير — في انتظار المناقشة</span></div>
       </div>
       <div class="card-stat">
         <div class="card-stat-num" style="font-size:1.2rem;line-height:1.2">Digital<br>Solutions</div>
@@ -901,7 +831,7 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
           </p>
           <div class="about-badge">
             <span class="badge-main">2026</span>
-            <span class="badge-sub"><span class="en-text">Expected Graduation</span><span class="ar-text">التخرج المتوقع</span></span>
+            <span class="badge-sub"><span class="en-text">Pending Defense</span><span class="ar-text">في انتظار المناقشة</span></span>
           </div>
         </div>
       </div>
@@ -920,8 +850,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
           <p class="en-text">I hold a Bachelor of Computer Science from Umm Al-Qura University, graduating with First-Class Honors — a distinction that reflects both academic rigor and a commitment to depth and precision in every undertaking.</p>
           <p class="ar-text">حاصلة على بكالوريوس علوم الحاسب من جامعة أم القرى بمرتبة الشرف الأولى — تمييز يعكس الصرامة الأكاديمية والالتزام بالدقة والعمق في كل ما أقوم به.</p>
 
-          <p class="en-text">I am currently a Master's student with an expected graduation in 2026, while contributing to the Enterprise Transformation Program at the Public Prosecution — producing high-quality digital and institutional deliverables across multiple domains.</p>
-          <p class="ar-text">أواصل دراستي في مرحلة الماجستير مع توقع التخرج عام 2026، وأساهم في الوقت ذاته في برنامج التحول المؤسسي بالنيابة العامة، من خلال إنتاج مخرجات رقمية ومؤسسية عالية الجودة في مجالات متعددة.</p>
+          <p class="en-text">I have completed all requirements for my Master's degree and am awaiting my thesis defense. Previously, I contributed to the Enterprise Transformation Program at the Public Prosecution — producing high-quality digital and institutional deliverables across multiple domains.</p>
+          <p class="ar-text">أنهيت جميع متطلبات الماجستير وأنتظر مناقشة الرسالة. سبق لي المساهمة في برنامج التحول المؤسسي بالنيابة العامة، من خلال إنتاج مخرجات رقمية ومؤسسية عالية الجودة في مجالات متعددة.</p>
 
           <p class="en-text">I combine analytical thinking, meticulous attention to detail, and professional execution — enabling me to translate complex requirements into precise, polished results.</p>
           <p class="ar-text">أجمع بين التفكير التحليلي والاهتمام الدقيق بالتفاصيل والتنفيذ الاحترافي — مما يمكّنني من ترجمة المتطلبات المعقدة إلى نتائج دقيقة ومصقولة.</p>
@@ -948,8 +878,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
 
     <!-- Narrative intro with bullet list -->
     <div class="exp-intro rv rv2">
-      <p class="en-text"><strong>Public Prosecution — Enterprise Transformation Program</strong><br>Contributing to the preparation and execution of program deliverables, including:</p>
-      <p class="ar-text"><strong>النيابة العامة — برنامج التحول المؤسسي</strong><br>المساهمة في إعداد وتنفيذ مخرجات البرنامج، تشمل:</p>
+      <p class="en-text"><strong>Public Prosecution — Enterprise Transformation Program</strong><br>Contributed to the preparation and execution of program deliverables, including:</p>
+      <p class="ar-text"><strong>النيابة العامة — برنامج التحول المؤسسي</strong><br>ساهمت في إعداد وتنفيذ مخرجات البرنامج، شملت:</p>
       <ul class="exp-bullets">
         <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Developing institutional websites.</span><span class="ar-text">تطوير المواقع الإلكترونية.</span></li>
         <li class="exp-bullet"><div class="exp-bullet-dot"></div><span class="en-text">Building digital systems and platforms.</span><span class="ar-text">تطوير الأنظمة والمنصات الرقمية.</span></li>
@@ -1070,11 +1000,11 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
         <span class="proj-tag ar-text">مخرجات مؤسسية</span>
         <h3><span class="en-text">Enterprise Transformation Program</span><span class="ar-text">برنامج التحول المؤسسي</span></h3>
         <p class="proj-meta">
-          <span class="en-text">Public Prosecution · Ongoing Contribution</span>
-          <span class="ar-text">النيابة العامة · مساهمة مستمرة</span>
+          <span class="en-text">Public Prosecution · May – Aug 2026</span>
+          <span class="ar-text">النيابة العامة · مايو – أغسطس 2026</span>
         </p>
         <p>
-          <span class="en-text">Contributed to institutional websites, digital data-collection systems, executive reports, and visual identity materials supporting the program's initiatives.</span>
+          <span class="en-text">Built institutional websites, digital data-collection systems (QR attendance, surveys), executive reports, and visual identity materials supporting the program's initiatives.</span>
           <span class="ar-text">المساهمة في مواقع إلكترونية مؤسسية وأنظمة رقمية لجمع البيانات وتقارير تنفيذية ومواد هوية بصرية داعمة لمبادرات البرنامج.</span>
         </p>
       </div>
@@ -1133,72 +1063,6 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
 
       <span class="skill-chip en-text">Project Deliverables</span>
       <span class="skill-chip ar-text">إدارة المخرجات</span>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     CERTIFICATIONS
-══════════════════════════════════ -->
-<section id="certifications">
-  <div class="wrap">
-    <div class="sec-label rv">
-      <div class="sec-label-line"></div>
-      <span class="sec-label-text en-text">Professional Credentials</span>
-      <span class="sec-label-text ar-text">الاعتمادات المهنية</span>
-    </div>
-    <h2 class="sec-heading rv rv1">
-      <span class="en-text">Certifications &amp;<br><em>Memberships</em></span>
-      <span class="ar-text">الشهادات<br><em>والعضويات</em></span>
-    </h2>
-
-    <div class="cert-grid">
-
-      <div class="cert-card rv">
-        <div class="cert-logo">
-          <div class="cert-logo-badge">
-            <!-- SCE logo simplified -->
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-          </div>
-          <div>
-            <div class="cert-issuer">
-              <span class="en-text">Saudi Council of Engineers</span>
-              <span class="ar-text">الهيئة السعودية للمهندسين</span>
-            </div>
-            <div class="cert-issuer-sub">
-              <span class="en-text">Kingdom of Saudi Arabia · SCE</span>
-              <span class="ar-text">المملكة العربية السعودية · SCE</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="cert-title">
-          <span class="en-text">Professional Membership Certificate</span>
-          <span class="ar-text">شهادة تسجيل عضوية مهنية</span>
-        </p>
-        <p class="cert-spec">
-          <span class="en-text">Membership Category: Specialist &nbsp;·&nbsp; Specialization: Computer Science</span>
-          <span class="ar-text">فئة العضوية: أخصائي &nbsp;·&nbsp; التخصص: علوم الحاسب</span>
-        </p>
-
-        <div class="cert-meta">
-          <span class="cert-valid">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span class="en-text">Active — Valid until 25 June 2027</span>
-            <span class="ar-text">سارية — حتى 25 يونيو 2027</span>
-          </span>
-          <span class="cert-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            <span class="en-text">Membership No. 1260526</span>
-            <span class="ar-text">رقم العضوية: 1260526</span>
-          </span>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1275,8 +1139,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
       <div class="rv rv2">
         <div class="ms-card">
           <span class="ms-label">
-            <span class="en-text">Current Academic Status · 2026</span>
-            <span class="ar-text">الوضع الأكاديمي الحالي · 2026</span>
+            <span class="en-text">Current Academic Status · 2025</span>
+            <span class="ar-text">الوضع الأكاديمي الحالي · 2025</span>
           </span>
           <p class="ms-title">
             <span class="en-text">Master's Degree<br>in Computer Science</span>
@@ -1291,8 +1155,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/></svg>
             </div>
             <p class="ms-graduation-txt">
-              <span class="en-text"><strong style="color:rgba(255,255,255,0.9)">Expected Graduation: 2026</strong><br>Umm Al-Qura University</span>
-              <span class="ar-text"><strong style="color:rgba(255,255,255,0.9)">متوقع التخرج: 2026</strong><br>جامعة الطائف</span>
+              <span class="en-text"><strong style="color:rgba(255,255,255,0.9)">Completed — Pending Defense</strong><br>Taif University</span>
+              <span class="ar-text"><strong style="color:rgba(255,255,255,0.9)">أنهيت المتطلبات — في انتظار المناقشة</strong><br>جامعة الطائف</span>
             </p>
           </div>
         </div>
@@ -1380,7 +1244,7 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
       <div class="contact-btns rv rv3">
         <a href="mailto:ghaidamallhyani@gmail.com" class="c-btn primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          <span class="en-text">Email Me</span><span class="ar-text">راسلني</span>
+          <span class="en-text">Email Me</span><span class="ar-text">راسليني</span>
         </a>
         <a href="https://wa.me/966507171847" target="_blank" class="c-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -1419,8 +1283,8 @@ footer{background:var(--ink);padding:3rem 2.5rem;text-align:center}
     <span class="ar-text">"لنبنِ معًا شيئًا <span>ذا معنى</span>."</span>
   </p>
   <p class="foot-copy">
-    <span class="en-text">© 2026 Ghaida Meshal Al-Lahyani · Digital Solutions Specialist · Makkah Region, Saudi Arabia</span>
-    <span class="ar-text">© 2026 غيداء مشعل اللحياني · أخصائية حلول رقمية · منطقة مكة المكرمة، المملكة العربية السعودية</span>
+    <span class="en-text">© 2026 Ghaida Meshal Al-Lahyani · Digital Solutions Specialist · Saudi Arabia</span>
+    <span class="ar-text">© 2025 غيداء مشعل اللحياني · أخصائية حلول رقمية · المملكة العربية السعودية</span>
   </p>
 </footer>
 
